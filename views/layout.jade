@@ -1,8 +1,8 @@
-doctype 5
+doctype
 html
   head
     title BBCloneMail: A Backbone.Marionette Reference Application
-    link(href="/css/bbclonemail.css", rel="stylesheet", type"=text/css")
+    link(href='/css/bbclonemail.css', rel='stylesheet', type='text/css')
 
     include templates/email-preview-template
     include templates/email-view-template
@@ -17,15 +17,15 @@ html
         header
           h1 BBCloneMail
           p.tag-line
-            | A 
-            a(href="http://marionettejs.com") Marionette.js 
+            | A
+            a(href='http://marionettejs.com') Marionette.js
             | Reference Application
         header.help
-          | This application demonstrates the use of 
-          a(href="http://marionettejs.com") Marionette.js 
-          | plugin for BackboneJS. To see it in action, change the selected app 
-          | in the drop list to the left. Be sure to check out 
-          a(href="http://github.com/marionettejs/bbclonemail") the source code 
+          | This application demonstrates the use of
+          a(href='http://marionettejs.com') Marionette.js
+          | plugin for BackboneJS. To see it in action, change the selected app
+          | in the drop list to the left. Be sure to check out
+          a(href='http://github.com/marionettejs/bbclonemail') the source code
           | to see how it works.
 
     section.content
@@ -42,14 +42,14 @@ html
         footer
           ul
             li
-              | Copyright &copy;2013 
-              a(href="http://mutedsolutions.com") Muted Solutions, LLC. 
-              | All rights reserved. 
+              | Copyright &copy;2013
+              a(href='http://mutedsolutions.com') Muted Solutions, LLC.
+              | All rights reserved.
           ul
             li
-              | BBCloneMail is a reference app for building awesomeness with 
-              a(href="http://backbonejs.org") Backbone.js 
-              | and 
+              | BBCloneMail is a reference app for building awesomeness with
+              a(href="http://backbonejs.org") Backbone.js
+              | and
               a(href="http://marionettejs.com") Marionette.js
           ul
             li.title BBCloneMail Source:
@@ -84,7 +84,7 @@ html
 
     include scripts
 
-    script
+    script(type='text/javascript').
       $(function(){
         BBCloneMail.start();
       });

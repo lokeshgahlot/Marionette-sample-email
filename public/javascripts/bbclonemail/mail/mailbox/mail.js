@@ -1,4 +1,4 @@
-BBCloneMail.module("MailApp.Mail", function(Mail, App, Backbone, Marionette, $, _){
+BBCloneMail.module("MailApp.Mail", function(Mail, App, Backbone, Marionette, $, _) {
   "use strict";
 
   // Entities
@@ -16,20 +16,20 @@ BBCloneMail.module("MailApp.Mail", function(Mail, App, Backbone, Marionette, $, 
   // ------------------
 
   Mail.Mailbox = Marionette.Controller.extend({
-    getAll: function(){
+    getAll: function() {
       var deferred = $.Deferred();
 
-      this._getMail(function(mail){
+      this._getMail(function(mail) {
         deferred.resolve(mail);
       });
 
       return deferred.promise();
     },
 
-    getById: function(id){
+    getById: function(id) {
       var deferred = $.Deferred();
 
-      this._getMail(function(mailList){
+      this._getMail(function(mailList) {
         var mail = mailList.get(id);
         deferred.resolve(mail);
       });
@@ -37,11 +37,11 @@ BBCloneMail.module("MailApp.Mail", function(Mail, App, Backbone, Marionette, $, 
       return deferred.promise();
     },
 
-    getByCategory: function(categoryName){
+    getByCategory: function(categoryName) {
       var deferred = $.Deferred();
 
-      this._getMail(function(unfiltered){
-        var filtered = unfiltered.filter(function(mail){
+      this._getMail(function(unfiltered) {
+        var filtered = unfiltered.filter(function(mail) {
           var categories = mail.get("categories");
           return _.include(categories, categoryName);
         });
@@ -53,7 +53,7 @@ BBCloneMail.module("MailApp.Mail", function(Mail, App, Backbone, Marionette, $, 
       return deferred.promise();
     },
 
-    _getMail: function(callback){
+    _getMail: function(callback) {
       var emailCollection = new EmailCollection();
       emailCollection.on("reset", callback);
       emailCollection.fetch();
